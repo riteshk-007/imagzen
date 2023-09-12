@@ -1,1 +1,83 @@
 @import "../../mixins.scss";
+.banner {
+  height: 70vh;
+  position: relative;
+  .swiper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .slider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background-position: center;
+        filter: brightness(0.8);
+        border-radius: 4px;
+      }
+    }
+  }
+  .content {
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    z-index: 8;
+    align-items: center;
+    justify-content: center;
+    h3 {
+      font-family: "Poppins", sans-serif;
+      font-size: 25px;
+      color: #fff;
+      margin: 10px auto;
+      text-align: center;
+      @include md {
+        font-size: 35px;
+      }
+    }
+    span {
+      margin: 10px auto;
+      background: #f3f3f3;
+      width: 90%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+      input {
+        width: 90%;
+        padding: 10px 15px;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 17px;
+        font-family: "Poppins", sans-serif;
+        text-transform: capitalize;
+        @include md {
+          font-size: 20px;
+          padding: 15px 20px;
+        }
+      }
+      @include md {
+        width: 60%;
+        gap: 10px;
+      }
+    }
+    @include md {
+      width: 60%;
+      background: rgba(255, 255, 255, 0);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2.9px);
+    }
+  }
+}
