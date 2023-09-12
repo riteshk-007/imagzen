@@ -1,0 +1,7 @@
+@import "../../mixins.scss";
+.card-Container {
+  margin: 50px auto;
+  gap: 15px;
+  max-width: 95%;
+  columns: 5 350px;
+}
