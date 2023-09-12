@@ -1,0 +1,14 @@
+@import "../../mixins.scss";
+.header {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  h3 {
+    text-transform: uppercase;
+    font-family: "Dancing Script", cursive;
+    // font-family: 'Poppins', sans-serif;
+  }
+}
