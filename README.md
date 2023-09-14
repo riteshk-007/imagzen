@@ -18,6 +18,8 @@ Provide instructions on how to install and set up your project. Include any prer
 
 ![image](https://github.com/riteshk-007/imagzen/assets/135107962/4ca5d29f-d98d-41b9-b1a9-dd4eb3e3230c)
 
+![image](https://github.com/riteshk-007/imagzen/assets/135107962/b4e9d35b-e05e-4e5e-821d-cf9f382e57cc)
+
 ```bash
 # Example installation steps
 git clone https://github.com/riteshk-007/imagzen.git
@@ -33,7 +35,7 @@ npm start
 Features
 
 
-![image](https://github.com/riteshk-007/imagzen/assets/135107962/81065519-9927-4bb6-a7a3-144bd577c001)
+
 
 
 ...
@@ -56,3 +58,4 @@ This project is licensed under the [MIT License](LICENSE).
 Acknowledgments
 If your project includes third-party libraries, tools, or resources, you can acknowledge them here.
 
+![Uploading image.png…]()
