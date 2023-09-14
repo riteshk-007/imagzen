@@ -1,12 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Card.scss";
-import { AiOutlineDownload } from "react-icons/ai";
 import { IoMdAdd } from "react-icons/io";
 import { BsFillSuitHeartFill } from "react-icons/bs";
-function Card({ img }) {
+import { ContextApp } from "../../utils/Context";
+function Card({ item, id }) {
+  const { setShow, setDetail } = useContext(ContextApp);
+  // const { id } = useParams();
+
+  const handleShow = () => {
+    const getImages = (apiUrl) => {
+      fetch(apiUrl, {
+        headers: { Authorization: process.env.REACT_APP_SECRET_KEY },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setDetail(data);
+        });
+    };
+    setShow(true);
+    getImages(`https://api.pexels.com/v1/photos/${id}`);
+    document.body.classList.add("active");
+  };
+
   return (
-    <div className="card">
-      <img src={img} alt="" loading="lazy" />
+    <div className="card" onClick={() => handleShow()}>
+      <img src={item?.src?.large2x} alt={item?.photographer} loading="lazy" />
       <div className="save-icon show-img">
         <button title="add">
           <IoMdAdd />
@@ -17,18 +35,7 @@ function Card({ img }) {
       </div>
       <div className="detail show-img">
         <span>
-          <img
-            src="https://images.unsplash.com/profile-1601077628719-391aa5d76bbdimage?dpr=1&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff"
-            alt="user"
-            loading="lazy"
-            title="user"
-          />
-          <p title="username">Lenora Sherman</p>
-        </span>
-        <span>
-          <button title="download">
-            <AiOutlineDownload />
-          </button>
+          <p title="username">{item?.photographer}</p>
         </span>
       </div>
     </div>

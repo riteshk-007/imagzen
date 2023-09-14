@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Banner.scss";
 import { HiOutlineSearch } from "react-icons/hi";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -8,8 +8,11 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay } from "swiper/modules";
+import { ContextApp } from "../../utils/Context";
 
 function Banner() {
+  const { value, setValue, searchResult } = useContext(ContextApp);
+
   return (
     <div className="banner">
       <Swiper
@@ -59,7 +62,13 @@ function Banner() {
             fontSize={20}
             style={{ margin: "auto 5px" }}
           />
-          <input type="text" placeholder="Search images" />
+          <input
+            type="text"
+            placeholder="Search images"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+            onKeyUp={searchResult}
+          />
         </span>
       </div>
     </div>
